@@ -766,7 +766,7 @@
 		<div class="main_container feature_wrap">
 			<h2>Featured Courses</h2>
 			<section class="slider_section">
-				<div class="slider_wrapper slider_1">
+				<div class="slider_wrapper fade slider_1">
 					<div class="slider_inner slider_img">
 						<img src="images/slider-thumb.jpg" alt="">
 					</div>
@@ -792,8 +792,8 @@
 						</div>
 					</div>
 				</div>
-					<!--
-				<div class="slider_wrapper slider_2">
+					
+				<div class="slider_wrapper fade slider_2">
 					<div class="slider_inner slider_img">
 						<img src="images/slider-thumb.jpg" alt="">
 					</div>
@@ -820,7 +820,7 @@
 					</div>
 				</div>
 
-				<div class="slider_wrapper slider_3">
+				<div class="slider_wrapper fade slider_3">
 					<div class="slider_inner slider_img">
 						<img src="images/slider-thumb.jpg" alt="">
 					</div>
@@ -846,7 +846,9 @@
 						</div>
 					</div>
 				</div>
-			-->
+
+			<button onclick="plusSlides(-1)" class="prev"><i class="fas fa-angle-left"></i></button>
+			<button onclick="plusSlides(-1)" class="next"><i class="fas fa-angle-right"></i></button>
 			</section>
 		</div>
 	</div>
@@ -1478,6 +1480,58 @@
 		});
 
 	  });
+
+
+	//slider function
+	var slideIndx = 0;
+	showSlids();
+
+	function showSlids() {
+	  var i;
+	  var slides = document.getElementsByClassName("slider_wrapper");
+	  for (i = 0; i < slides.length; i++) {
+	    slides[i].style.display = "none";
+	  }
+	  slideIndx++;
+	  if (slideIndx > slides.length) {slideIndx = 1}
+	  slides[slideIndx-1].style.display = "flex";
+	  setTimeout(showSlids, 4000); // Change image every 2 seconds
+	}
+
+
+
+
+
+
+
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("slider_wrapper");
+	  if (n > slides.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+	      slides[i].style.display = "none";  
+	  }
+	 
+	  slides[slideIndex-1].style.display = "flex"; 
+	}
+
+
+
+
+
+
+	</script>
+	    
+
 </script>
+
 </body>
 </html>
