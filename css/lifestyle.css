@@ -854,6 +854,24 @@ display: none;
 	margin-top: 5rem;
 	display: block;
 }
+.slider_section{
+  position: relative;
+}
+.slider_section button.prev, .slider_section button.next {
+    position: absolute;
+    top: 43%;
+    background: #fff;
+    border: none;
+    padding: 1.7rem 2.4rem;
+    box-shadow: 1px 1px 12px gainsboro;
+    border-radius: 50%;
+    font-size: 2rem;
+    left: -3rem;
+}
+.slider_section button.next {
+    left: unset;
+    right: -2rem;
+}
 .feature_wrap .slider_wrapper {
   border: 1px solid #d3d0d0;
   border-radius: 0.3rem;
@@ -971,6 +989,25 @@ display: none;
 }
 .feature_wrap .slider_wrapper .rating_tag p .star {
   color: #e39051;
+}
+.slider_wrapper {display: none;}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 .slider_inner h2, .slider_inner p, .slider_inner div {
   flex: 0 0 auto;
